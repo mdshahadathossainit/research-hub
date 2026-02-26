@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; ে
+import ReactDOM from 'react-dom/client';
 import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
-import './assets/main.css'; ে
+import './assets/main.css';
 
 const App = () => {
   return (
