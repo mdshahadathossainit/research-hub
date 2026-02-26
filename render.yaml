@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: research-hub-backend
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "cd backend && gunicorn core.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
