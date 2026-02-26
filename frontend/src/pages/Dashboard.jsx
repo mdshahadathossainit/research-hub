@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Send, FileText, User, Sparkles } from 'lucide-center'; // দ্রষ্টব্য: আপনার কোডে lucide-react ছিল, সেটিই থাকবে
+import { Send, FileText, User, Sparkles } from 'lucide-react'; 
 
 const Dashboard = () => {
   const [list, setList] = useState([]);
