@@ -8,11 +8,7 @@ SECRET_KEY = 'django-insecure-your-secret-key-here'
 DEBUG = True
 
 
-ALLOWED_HOSTS = [
-    'research-hub-api.onrender.com',
-    '127.0.0.1', 
-    '.onrender.com'
-]
+ALLOWED_HOSTS = ['research-hub-1.onrender.com', '127.0.0.1', '.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
