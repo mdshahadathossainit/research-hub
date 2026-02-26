@@ -51,7 +51,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'core.wsgi'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
