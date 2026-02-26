@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Send, FileText, User, Sparkles } from 'lucide-react';
+import { Send, FileText, User, Sparkles } from 'lucide-center'; // দ্রষ্টব্য: আপনার কোডে lucide-react ছিল, সেটিই থাকবে
 
 const Dashboard = () => {
   const [list, setList] = useState([]);
   const [entry, setEntry] = useState({ title: '', author: '', abstract: '' });
+
+  const API_URL = 'https://research-hub-d9pz.onrender.com/api/papers/';
 
   useEffect(() => {
     loadPapers();
@@ -12,21 +14,21 @@ const Dashboard = () => {
 
   const loadPapers = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/api/papers/');
+      const response = await axios.get(API_URL);
       setList(response.data);
     } catch (err) {
-      console.error(err);
+      console.error("Error loading papers:", err);
     }
   };
 
   const handlePublish = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://127.0.0.1:8000/api/papers/', entry);
+      await axios.post(API_URL, entry);
       setEntry({ title: '', author: '', abstract: '' });
       loadPapers();
     } catch (err) {
-      console.error(err);
+      console.error("Error publishing paper:", err);
     }
   };
 
