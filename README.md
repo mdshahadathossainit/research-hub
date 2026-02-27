@@ -2,7 +2,7 @@
 
 Research Hub is a modern **Full-Stack Web Application** designed for researchers and students to publish, archive, and manage research papers. The project features a robust **Django REST Framework** backend integrated with a highly responsive **React** frontend.
 
-🚀 **Live Demo:** [https://research-hub-kappa.vercel.app/](https://research-hub-kappa.vercel.app/)
+🚀 **Live Demo:** (frontend: https://research-hub-kappa.vercel.app/) (Backend: https://research-hub-d9pz.onrender.com/api/papers/)**
 
 ---
 
