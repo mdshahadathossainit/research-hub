@@ -25,10 +25,10 @@ const Footer = () => {
               <a href="https://mdshahadathossainit.github.io/" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors">
                 <Globe size={20} />
               </a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/in/mdshahadathossainit/" className="text-slate-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:shahadat@example.com" className="text-slate-400 hover:text-white transition-colors">
+              <a href="m.shahadat.hossain.it@gmail.com" className="text-slate-400 hover:text-white transition-colors">
                 <Mail size={20} />
               </a>
             </div>
