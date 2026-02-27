@@ -38,6 +38,13 @@ const Dashboard = () => {
     }
   };
 
+  const handleViewDetails = (item) => {
+    const message = `Research Title: ${item.title}\nAuthor: ${item.author}\n\nWould you like to view the full abstract?`;
+    if (window.confirm(message)) {
+      alert(`ABSTRACT:\n\n${item.abstract}`);
+    }
+  };
+
   return (
     <main className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-12 gap-10">
       {/* Submission Sidebar */}
@@ -101,7 +108,7 @@ const Dashboard = () => {
 
         <div className="space-y-6">
           {list.length === 0 ? (
-            <div className="custom-glass p-20 rounded-2xl text-center">
+            <div className="custom-glass p-20 rounded-2xl text-center border-dashed border-2 border-white/5">
               <p className="text-slate-500 animate-pulse font-medium">No publications found. Be the first to publish!</p>
             </div>
           ) : (
@@ -112,11 +119,10 @@ const Dashboard = () => {
                     {item.category || "Research"}
                   </span>
                   
-                  {/* File Icon with functionality */}
                   <button 
-                    onClick={() => alert(`Reviewing details for: ${item.title}`)}
+                    onClick={() => handleViewDetails(item)}
                     className="p-2 hover:bg-white/10 rounded-full transition-all group/icon"
-                    title="View Paper Details"
+                    title="View Full Abstract"
                   >
                     <FileText size={22} className="text-slate-500 group-hover/icon:text-indigo-400 transition-colors" />
                   </button>
