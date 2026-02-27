@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Send, FileText, User, Sparkles } from 'lucide-react';
+import { Send, FileText, User, Sparkles, Search } from 'lucide-react';
 
 const Dashboard = () => {
   const [list, setList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(''); 
   const [entry, setEntry] = useState({ title: '', author: '', abstract: '' });
   const [loading, setLoading] = useState(false);
 
@@ -44,6 +45,11 @@ const Dashboard = () => {
       alert(`ABSTRACT:\n\n${item.abstract}`);
     }
   };
+
+  const filteredList = list.filter((item) => 
+    item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.author.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <main className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-12 gap-10">
@@ -96,23 +102,34 @@ const Dashboard = () => {
 
       {/* Publications List Section */}
       <section className="col-span-12 lg:col-span-8">
-        <div id="publications-list" className="flex items-center justify-between mb-8 scroll-mt-28">
+        <div id="publications-list" className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 scroll-mt-28 gap-4">
           <div>
             <h2 className="text-3xl font-bold text-white">Latest Publications</h2>
             <p className="text-slate-400 text-sm mt-1 italic">Discover recently indexed research papers</p>
           </div>
-          <div className="bg-indigo-500/10 border border-indigo-500/20 px-4 py-2 rounded-full">
-             <span className="text-indigo-400 font-bold text-xs uppercase tracking-widest">{list.length} Papers</span>
+          
+          {/New Search Bar/}
+          <div className="relative group">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-indigo-400 transition-colors" size={18} />
+            <input 
+              type="text"
+              placeholder="Search by title or author..."
+              className="pl-12 pr-4 py-2.5 bg-white/5 border border-white/10 rounded-full text-sm text-white outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all w-full sm:w-64"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </div>
         </div>
 
         <div className="space-y-6">
-          {list.length === 0 ? (
+          {filteredList.length === 0 ? (
             <div className="custom-glass p-20 rounded-2xl text-center border-dashed border-2 border-white/5">
-              <p className="text-slate-500 animate-pulse font-medium">No publications found. Be the first to publish!</p>
+              <p className="text-slate-500 animate-pulse font-medium">
+                {searchTerm ? `No results found for "${searchTerm}"` : "No publications found. Be the first to publish!"}
+              </p>
             </div>
           ) : (
-            list.map((item) => (
+            filteredList.map((item) => (
               <div key={item.id} className="custom-glass p-8 rounded-2xl hover:bg-white/[0.05] transition-all group border-transparent hover:border-white/10 cursor-default">
                 <div className="flex justify-between items-start mb-5">
                   <span className="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-[10px] font-bold uppercase tracking-[0.2em] rounded-md border border-indigo-500/30">
