@@ -6,6 +6,13 @@ Research Hub is a modern **Full-Stack Web Application** designed for researchers
 
 ---
 
+#### 🤖 [Reasearch-hub]
+<p align="center">
+  <img src="https://i.imgur.com/DqxC9J7.png" width="850" alt="Nexus AI Dashboard"/>
+  <br><br>
+  <img src="https://i.imgur.com/cHYz2v0.png" width="850" alt="Nexus AI Chatbot"/>
+</p>
+
 ## ✨ Features
 
 * **Paper Submission:** Users can seamlessly submit research titles, authors, and abstracts via a secure interface.
