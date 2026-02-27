@@ -40,8 +40,9 @@ const Dashboard = () => {
 
   return (
     <main className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-12 gap-10">
+      {/* Submission Sidebar */}
       <section className="col-span-12 lg:col-span-4">
-        <div className="custom-glass p-8 rounded-3xl sticky top-8">
+        <div className="custom-glass p-8 rounded-3xl sticky top-28">
           <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-white">
             <Sparkles size={20} className="text-indigo-400" /> AI Submission
           </h2>
@@ -86,8 +87,9 @@ const Dashboard = () => {
         </div>
       </section>
 
+      {/* Publications List Section */}
       <section className="col-span-12 lg:col-span-8">
-        <div className="flex items-center justify-between mb-8">
+        <div id="publications-list" className="flex items-center justify-between mb-8 scroll-mt-28">
           <div>
             <h2 className="text-3xl font-bold text-white">Latest Publications</h2>
             <p className="text-slate-400 text-sm mt-1 italic">Discover recently indexed research papers</p>
@@ -109,15 +111,26 @@ const Dashboard = () => {
                   <span className="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-[10px] font-bold uppercase tracking-[0.2em] rounded-md border border-indigo-500/30">
                     {item.category || "Research"}
                   </span>
-                  <FileText size={22} className="text-slate-500 group-hover:text-indigo-400 transition-colors" />
+                  
+                  {/* File Icon with functionality */}
+                  <button 
+                    onClick={() => alert(`Reviewing details for: ${item.title}`)}
+                    className="p-2 hover:bg-white/10 rounded-full transition-all group/icon"
+                    title="View Paper Details"
+                  >
+                    <FileText size={22} className="text-slate-500 group-hover/icon:text-indigo-400 transition-colors" />
+                  </button>
                 </div>
+                
                 <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-indigo-100 transition-colors">
                   {item.title}
                 </h3>
+                
                 <div className="flex items-center gap-2 text-slate-300 mb-5 bg-white/5 w-fit px-3 py-1.5 rounded-lg border border-white/5">
                   <User size={14} className="text-indigo-400" />
                   <span className="text-sm font-semibold tracking-wide">{item.author}</span>
                 </div>
+                
                 <div className="relative">
                   <p className="text-slate-400 text-sm leading-relaxed line-clamp-4 italic pl-4 border-l-2 border-indigo-500/30 group-hover:border-indigo-500/60 transition-colors">
                     "{item.abstract}"
