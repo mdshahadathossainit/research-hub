@@ -80,9 +80,5 @@ research-hub/
 
 📧 **Email:** m.shahadat.hossain.it@gmail.com
 
----
 
-*Developed with ❤️ for the research community.*
-
-```
 
