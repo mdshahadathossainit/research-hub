@@ -1,39 +1,41 @@
+
 # 🔬 Research Hub - Full-Stack Research Management System
 
 Research Hub is a modern **Full-Stack Web Application** designed for researchers and students to publish, archive, and manage research papers. The project features a robust **Django REST Framework** backend integrated with a highly responsive **React** frontend.
 
-🚀 **Live Demo:** (frontend: https://research-hub-kappa.vercel.app/) (Backend: https://research-hub-d9pz.onrender.com/api/papers/)**
+🚀 **Live Demo:** * **Frontend:** [research-hub-kappa.vercel.app](https://research-hub-kappa.vercel.app/)
+* **Backend API:** [research-hub-d9pz.onrender.com/api/papers/](https://research-hub-d9pz.onrender.com/api/papers/)
 
 ---
 
-#### 🤖 [Reasearch-hub]
 <p align="center">
-  <img src="https://i.imgur.com/DqxC9J7.png" width="850" alt="Nexus AI Dashboard"/>
+  <img src="https://i.imgur.com/DqxC9J7.png" width="850" alt="Research Hub Dashboard"/>
   <br><br>
-  <img src="https://i.imgur.com/cHYz2v0.png" width="850" alt="Nexus AI Chatbot"/>
+  <img src="https://i.imgur.com/cHYz2v0.png" width="850" alt="Research Hub Submission Interface"/>
 </p>
 
 ## ✨ Features
 
-* **Paper Submission:** Users can seamlessly submit research titles, authors, and abstracts via a secure interface.
-* **Dynamic Dashboard:** A real-time, card-based UI that displays the latest indexed publications.
-* **Decoupled Architecture:** Utilizes a modern microservices-style approach, with the frontend on **Vercel** and the backend on **Render**.
-* **RESTful API:** Powered by Django REST Framework (DRF) for efficient data serialization and communication.
-* **Professional UI:** Styled with **Tailwind CSS** and enhanced with **Lucide Icons** for a premium user experience.
+* **Smart Paper Submission:** Users can submit research titles, authors, and abstracts via a secure, real-time interface.
+* **AI-Powered Auto-Categorization:** The backend automatically classifies papers into categories like *Machine Learning*, *Cybersecurity*, or *Cloud Computing* based on keywords in the abstract.
+* **Dynamic Dashboard:** A real-time, glassmorphic UI that allows users to browse, search, and filter indexed publications instantly.
+* **Decoupled Architecture:** Follows a modern microservices approach with a separated frontend (React) and backend (Django REST).
+* **Mobile-First Design:** Fully responsive UI built with Tailwind CSS, ensuring a premium experience on all devices.
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend:
-* **React.js** (Vite-powered)
-* **Tailwind CSS** (Modern Styling)
-* **Axios** (Asynchronous API handling)
-* **Lucide React** (Vector Icons)
+### **Frontend:**
+* **React.js** (Vite-powered for performance)
+* **Tailwind CSS** (Custom Glassmorphism & Animations)
+* **Axios** (Efficient asynchronous API handling)
+* **Lucide React** (Modern vector iconography)
 
-### Backend:
-* **Django** & **Django REST Framework**
-* **SQLite** (Relational Database)
+### **Backend:**
+* **Django & Django REST Framework** (DRF)
+* **SQLite** (Development database)
+* **WhiteNoise** (Static file management for production)
 * **Gunicorn** (Production-grade WSGI Server)
 
 ---
@@ -42,31 +44,45 @@ Research Hub is a modern **Full-Stack Web Application** designed for researchers
 
 ```text
 research-hub/
-├── backend/            # Django REST API
-│   ├── api/            # App managing research paper models
-│   └── core/           # Main configuration and settings
-└── frontend/           # React Application
-    ├── src/
-    │   ├── components/ # Reusable UI components (Navbar, etc.)
-    │   └── pages/      # Dashboard and core logic
-    └── index.html      # SPA entry point
+├── backend/            # Django REST API (Backend)
+│   ├── api/            # App managing models, views & serializers
+│   ├── core/           # Main configuration and settings
+│   ├── manage.py       # Django administrative script
+│   └── requirements.txt # Python dependencies
+├── frontend/           # React Application (Frontend)
+│   ├── src/
+│   │   ├── components/ # Reusable UI (Navbar, Footer, etc.)
+│   │   ├── pages/      # Main logic (Dashboard.jsx)
+│   │   └── assets/     # Styling & Global CSS
+│   └── index.html      # SPA entry point
+├── build.sh            # Deployment & Migration script
+└── README.md           # Project Documentation
 
-    ⚙️ Deployment & Infrastructure
-Backend: Deployed on Render with custom Build Commands to manage automated database migrations.
+```
 
-Frontend: Deployed on Vercel with a CI/CD pipeline linked directly to GitHub for automated builds.
+---
 
-Database Management: Implemented Django's migration system to ensure schema consistency during deployment.
+## ⚙️ Deployment & Infrastructure
 
+* **Backend:** Deployed on **Render** with a custom `build.sh` to automate database migrations and static file collection.
+* **Frontend:** Hosted on **Vercel** with a CI/CD pipeline linked to GitHub for automated deployments.
+* **API Communication:** Secured with **CORS** headers to allow safe cross-origin data exchange between Vercel and Render.
 
+---
 
+## 👨‍💻 Author
 
-👨‍💻 Author
-Md Shahadat Hossain
+**Md Shahadat Hossain** 
 
-Computer Club Member at Port City International University
+🔗 **GitHub:** [@mdshahadathossainit](https://github.com/mdshahadathossainit)
 
-GitHub: mdshahadathossainit [cite: 2025-08-28]
+🌐 **Portfolio:** [mdshahadathossainit.github.io](https://mdshahadathossainit.github.io/)
 
-Portfolio: mdshahadathossainit.github.io [cite: 2025-08-28]
+📧 **Email:** m.shahadat.hossain.it@gmail.com
+
+---
+
+*Developed with ❤️ for the research community.*
+
+```
 
